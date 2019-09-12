@@ -1,6 +1,6 @@
 // ITP-120
 // Assignment 1
-// Version 1.01
+// Version 1.1
 //   ~~~~~~~~~~~~~~~Names~~~~~~~~~~~~~
 //   | William Sutton - Hassen Shakeel|
 //   |Stuart McAlpine - Trevor Saflin |
@@ -154,7 +154,6 @@ public class Tuition{
       double gnsf = 0;
       boolean repeat = true;
       String yon = "";//yes or no
-      sc.nextLine();
       do{
          System.out.println("Please answer yes or no(y/n) if you are a new student!\n");
          yon = sc.nextLine();
@@ -184,9 +183,9 @@ public class Tuition{
    public static boolean getTime(){
       String choice = "a";
       boolean day = true, repeat = true;
+      sc.nextLine();
       do{
          System.out.println("Please select day or night by typing in either \"Day\" or \"Night\"");
-         sc.nextLine();
          choice = sc.nextLine();
          choice = choice.trim();
          if(choice.equalsIgnoreCase("day")){
@@ -244,8 +243,9 @@ public class Tuition{
          credit = (int)sc.nextDouble();
          if(credit < 1 || credit > 30){
             System.out.println("Error: Please enter a valid number");
+            sc.nextLine();
          }
-      }while(credit <= 0);
+      }while(credit <= 0 || credit >= 30);
       return credit;
    }
    public static int getDegree(){
@@ -282,6 +282,7 @@ public class Tuition{
          }
          else{
             System.out.println("You did not enter a valid degree. Please try again.");
+            sc.nextLine();
          }
          
       }while(selection == 0);
