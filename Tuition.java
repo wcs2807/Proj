@@ -1,6 +1,6 @@
 // ITP-120
 // Assignment 1
-// Version 1.1
+// Version 1.11
 //   ~~~~~~~~~~~~~~~Names~~~~~~~~~~~~~
 //   | William Sutton - Hassen Shakeel|
 //   |Stuart McAlpine - Trevor Saflin |
@@ -85,6 +85,7 @@ public class Tuition{
             System.out.println("You didn't enter yes(y) or no(n)");
          }
       }while(repeatLoop);
+      sc.nextLine();
       return repeat;
    }
    public static String getDegreeName(int degree){
