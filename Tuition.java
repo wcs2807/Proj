@@ -17,7 +17,7 @@ public class Tuition{
       double tuition = 0, gnsf = 0, erf = 0, total = 0;
       while(repeat){
          String name = "", degreeString = "";
-         System.out.println("Welcome to the GMU Tuition and Fees Calculator");
+         System.out.println("                Welcome to the GMU Tuition and Fees Calculator");
          displayLogo();
          name = getName();
          degree = getDegree();
