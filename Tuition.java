@@ -1,6 +1,6 @@
 // ITP-120
 // Assignment 1
-// Version 1.13
+// Version 1.14
 //   ~~~~~~~~~~~~~~~Names~~~~~~~~~~~~~
 //   | William Sutton - Hassen Shakeel|
 //   |Stuart McAlpine - Trevor Saflin |
@@ -22,7 +22,7 @@ public class Tuition{
          name = getName();
          degree = getDegree();
          degreeString = getDegreeName(degree);
-         credits = getCredits();
+         credits = getCredits();     
          if(degree == 3 || degree == 6){
             day = getTime();
          }
@@ -35,6 +35,10 @@ public class Tuition{
          repeat = getRepeat();
       }
    }
+	//Method: displayLogo()
+	//Description: Displays the logo of GMU
+	//Precondition: N/A
+	//Postcondition: N/A
    public static void displayLogo(){
       System.out.println("          _____                    _____                    _____          ");
       System.out.println("         /\\    \\                  /\\    \\                  /\\    \\         ");
@@ -58,13 +62,17 @@ public class Tuition{
       System.out.println("        \\::/____/                \\::/    /                \\::/____/        ");
       System.out.println("                                  \\/____/                  ~~              ");
    }
+	//Method: getRepeat()
+	//Description: Asks the user if they want to repeat the program
+	//Precondition: N/A
+	//Postcondition: returns a  public static boolean
    public static boolean getRepeat(){
       boolean repeat = true, repeatLoop = true;
       String yon = "";//yes or no
       do{
          System.out.println("Please answer yes or no(y/n) if you want to repeat!\n");
          yon = sc.nextLine();
-         yon = yon.trim();
+         yon = yon.trim();     
          if(yon.equalsIgnoreCase("y")){
             repeat = true;
             repeatLoop = false;
@@ -88,8 +96,12 @@ public class Tuition{
       sc.nextLine();
       return repeat;
    }
+	//Method: getDegreeName(int degree)
+	//Description: Gets the degree that the user wants
+	//Precondition: recieves a int degree
+	//Postcondition: returns a  public static String
    public static String getDegreeName(int degree){
-      String degreeS = "";
+      String degreeS = "";     
       if(degree == 1){
          degreeS = "IU for In State Undergraduate";
       }
@@ -110,22 +122,30 @@ public class Tuition{
       }
       return degreeS;
    }
+	//Method: getName()
+	//Description: Gets the user's name
+	//Precondition: N/A
+	//Postcondition: returns a  public static String
    public static String getName(){
       String name = "";
       do{
          System.out.println("Please enter your name and press enter");
          name = sc.nextLine();
-         name = name.trim();
+         name = name.trim(); 
          if(name.equals("")){
             System.out.println("Error: Please put in name");
          }
       }while(name.equals(""));   
       return name;
    }
+	//Method: display(int de, int cr, boolean day, double tu, double gnsf, double erf, double total, String name, String degreeString)
+	//Description: Displays all the data
+	//Precondition: recieves a int de, int cr, boolean day, double tu, double gnsf, double erf, double total, String name, String degreeString
+	//Postcondition: N/A
    public static void display(int de, int cr, boolean day, double tu, double gnsf, double erf, double total, String name, String degreeString){
       System.out.println("Tuition and fees report for " + name);
-      System.out.println("Type of Degree: " + degreeString);
-      if(de == 3 || de == 6){
+      System.out.println("Type of Degree: " + degreeString);    
+      if(de == 3 || de == 6){   
          if(day){
             System.out.println("Time of Classes: Day");
          }
@@ -140,6 +160,10 @@ public class Tuition{
       System.out.println("Total Tuition and Fees: " + String.format("%.2f", total));
       System.out.println("Boldly NOVA becomes PATRIOTS BRAVE & BOLD");
    }
+	//Method: getTotal(double tuition, double gnsf, double erf)
+	//Description: Gets the total tuition price by adding everything together
+	//Precondition: recieves a double tuition, double gnsf, double erf
+	//Postcondition: returns a  public static double
    public static double getTotal(double tuition, double gnsf, double erf){
       double total = 0, mod = 0;
       total = tuition + gnsf + erf;
@@ -147,9 +171,13 @@ public class Tuition{
       total -= mod;
       return total;
    }
+	//Method: getErf(int credits)
+	//Description: gets the Erf
+	//Precondition: recieves a int credits
+	//Postcondition: returns a  public static double
    public static double getErf(int credits){
       double erf = 0;
-      if(credits >= 7){// resonable credit cap
+      if(credits >= 7){
          erf = 100;
       }
       else{
@@ -157,6 +185,10 @@ public class Tuition{
       }
       return erf;
    }
+	//Method: getGnsf()
+	//Description: calculates the GNSF
+	//Precondition: N/A
+	//Postcondition: returns a  public static double
    public static double getGnsf(){
       double gnsf = 0;
       boolean repeat = true;
@@ -187,6 +219,10 @@ public class Tuition{
       }while(repeat);
       return gnsf;
    }
+	//Method: getTime()
+	//Description: Gets the time of day a law student will be working
+	//Precondition: N/A
+	//Postcondition: returns a  public static boolean
    public static boolean getTime(){
       String choice = "a";
       boolean day = true, repeat = true;
@@ -210,16 +246,20 @@ public class Tuition{
       }while(repeat);
       return day;
    }
+	//Method: getTuition(int degree, boolean time)
+	//Description: 
+	//Precondition: recieves a int degree, boolean time
+	//Postcondition: returns a  public static double
    public static double getTuition(int degree, boolean time){
      //3&6
-      double tuition = 0;
+      double tuition = 0;  
       if(degree == 1){
          tuition = 12462;
       }
       else if(degree == 2){
          tuition = 11354;
       }
-      else if(degree == 3){
+      else if(degree == 3){    
          if(time){
             tuition = 25354;
          }
@@ -233,7 +273,7 @@ public class Tuition{
       else if(degree == 5){
          tuition = 26794;
       }
-      else{
+      else{     
          if(time){
             tuition = 40740;
          } 
@@ -243,6 +283,10 @@ public class Tuition{
       }
       return tuition;
    }
+	//Method: getCredits()
+	//Description: Asks the user the amount of credits they're taking
+	//Precondition: N/A
+	//Postcondition: returns a  public static int
    public static int getCredits(){
       int credit = 0;
       do{
@@ -255,6 +299,10 @@ public class Tuition{
       }while(credit <= 0 || credit >= 30);
       return credit;
    }
+	//Method: getDegree()
+	//Description: Asks the user the degree they are taking
+	//Precondition: N/A
+	//Postcondition: returns a  public static int
    public static int getDegree(){
       int selection = 0;
       String degree = "";
