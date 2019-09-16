@@ -1,13 +1,13 @@
-// ITP-120
+// ITP-120 001M FA19
 // Assignment 1
-// Version 1.15
+// Version 1.15.1
 //   ~~~~~~~~~~~~~~~Names~~~~~~~~~~~~~
 //   | William Sutton - Hassen Shakeel|
 //   |Stuart McAlpine - Trevor Saflin |
 //   |Daanish Ahmed - Brian Pourkesali|
 //   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //
-// Purpose: This program calculates the tuition costs of a GMU student
+// Description: This program calculates the tuition costs of a GMU student
 import java.util.*;
 public class TuitionTest{
    static Scanner sc = new Scanner(System.in);
@@ -154,8 +154,8 @@ public class TuitionTest{
          }
       }
       System.out.println("Tuition: " + String.format("%.2f", tu));
-      System.out.println("Graduate New Student Fee: " + gnsf);
-      System.out.println("Education Resource Fee: " + erf);
+      System.out.println("Graduate New Student Fee: " + String.format("%.2f", gnsf));
+      System.out.println("Education Resource Fee: " + String.format("%.2f", erf));
       System.out.println("Number of Credits: " + cr);
       System.out.println("Total Tuition and Fees: " + String.format("%.2f", total));
       System.out.println("Boldly NOVA becomes PATRIOTS BRAVE & BOLD");
@@ -298,7 +298,7 @@ public class TuitionTest{
             if(credit < 1 || credit > 25){
             credit = 0;
             System.out.println("Please input a number 1 to 25!");
-         }
+            }
          }
          catch(InputMismatchException e){
             System.out.println("Error: Please input a number 1 to 25 with no decimals and in numerical form!");
