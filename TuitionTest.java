@@ -1,6 +1,6 @@
 // ITP-120 001M FA19
 // Assignment 1
-// Version 1.15.1
+// Version 1.15.3
 //   ~~~~~~~~~~~~~~~Names~~~~~~~~~~~~~
 //   | William Sutton - Hassen Shakeel|
 //   |Stuart McAlpine - Trevor Saflin |
@@ -51,7 +51,7 @@ public class TuitionTest{
       System.out.println("  /:::/    / \\:::\\    \\    /:::/  |::|___|______    /:::/    /      _____  ");
       System.out.println(" /:::/    /   \\:::\\ ___\\  /:::/   |::::::::\\    \\  /:::/____/      /\\    \\ ");
       System.out.println("/:::/____/  ___\\:::|    |/:::/    |:::::::::\\____\\|:::|    /      /::\\____\\");
-      System.out.println("\\:::\\    \\ /\\  /:::|____|\\::/    / ~~~~~/:::/    /|:::|____\\     /:::/    /");//
+      System.out.println("\\:::\\    \\ /\\  /:::|____|\\::/    / ~~~~~/:::/    /|:::|____\\     /:::/    /");
       System.out.println(" \\:::\\    /::\\ \\::/    /  \\/____/      /:::/    /  \\:::\\    \\   /:::/    / ");
       System.out.println("  \\:::\\   \\:::\\ \\/____/               /:::/    /    \\:::\\    \\ /:::/    /  ");
       System.out.println("   \\:::\\   \\:::\\____\\                /:::/    /      \\:::\\    /:::/    /   ");
@@ -143,7 +143,7 @@ public class TuitionTest{
 	//Precondition: recieves a int de, int cr, boolean day, double tu, double gnsf, double erf, double total, String name, String degreeString
 	//Postcondition: N/A
    public static void display(int de, int cr, boolean day, double tu, double gnsf, double erf, double total, String name, String degreeString){
-      System.out.println("Tuition and fees report for " + name);
+      System.out.println("Tuition and fees report for " + name + ":");
       System.out.println("Type of Degree: " + degreeString);    
       if(de == 3 || de == 6){   
          if(day){
@@ -166,10 +166,8 @@ public class TuitionTest{
 	//Precondition: recieves a double tuition, double gnsf, double erf
 	//Postcondition: returns a  public static double
    public static double getTotal(double tuition, double gnsf, double erf){
-      double total = 0, mod = 0;
+      double total = 0;
       total = tuition + gnsf + erf;
-      mod = total % .001;
-      total -= mod;
       return total;
    }
 	//Method: getErf(int credits)
