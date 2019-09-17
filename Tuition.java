@@ -1,14 +1,14 @@
-// ITP-120
+// ITP-120 001M FA19
 // Assignment 1
-// Version 1.14
+// Version 1.15.3
 //   ~~~~~~~~~~~~~~~Names~~~~~~~~~~~~~
 //   | William Sutton - Hassen Shakeel|
 //   |Stuart McAlpine - Trevor Saflin |
 //   |Daanish Ahmed - Brian Pourkesali|
 //   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //
-//
-import java.util.Scanner;
+// Description: This program calculates the tuition costs of a GMU student
+import java.util.*;
 public class Tuition{
    static Scanner sc = new Scanner(System.in);
    public static void main(String args[]){
@@ -51,7 +51,7 @@ public class Tuition{
       System.out.println("  /:::/    / \\:::\\    \\    /:::/  |::|___|______    /:::/    /      _____  ");
       System.out.println(" /:::/    /   \\:::\\ ___\\  /:::/   |::::::::\\    \\  /:::/____/      /\\    \\ ");
       System.out.println("/:::/____/  ___\\:::|    |/:::/    |:::::::::\\____\\|:::|    /      /::\\____\\");
-      System.out.println("\\:::\\    \\ /\\  /:::|____|\\::/    / ~~~~~/:::/    /|:::|____\\     /:::/    /");//
+      System.out.println("\\:::\\    \\ /\\  /:::|____|\\::/    / ~~~~~/:::/    /|:::|____\\     /:::/    /");
       System.out.println(" \\:::\\    /::\\ \\::/    /  \\/____/      /:::/    /  \\:::\\    \\   /:::/    / ");
       System.out.println("  \\:::\\   \\:::\\ \\/____/               /:::/    /    \\:::\\    \\ /:::/    /  ");
       System.out.println("   \\:::\\   \\:::\\____\\                /:::/    /      \\:::\\    /:::/    /   ");
@@ -143,7 +143,7 @@ public class Tuition{
 	//Precondition: recieves a int de, int cr, boolean day, double tu, double gnsf, double erf, double total, String name, String degreeString
 	//Postcondition: N/A
    public static void display(int de, int cr, boolean day, double tu, double gnsf, double erf, double total, String name, String degreeString){
-      System.out.println("Tuition and fees report for " + name);
+      System.out.println("Tuition and fees report for " + name + ":");
       System.out.println("Type of Degree: " + degreeString);    
       if(de == 3 || de == 6){   
          if(day){
@@ -154,21 +154,20 @@ public class Tuition{
          }
       }
       System.out.println("Tuition: " + String.format("%.2f", tu));
-      System.out.println("Graduate New Student Fee: " + gnsf);
-      System.out.println("Education Resource Fee: " + erf);
+      System.out.println("Graduate New Student Fee: " + String.format("%.2f", gnsf));
+      System.out.println("Education Resource Fee: " + String.format("%.2f", erf));
       System.out.println("Number of Credits: " + cr);
       System.out.println("Total Tuition and Fees: " + String.format("%.2f", total));
       System.out.println("Boldly NOVA becomes PATRIOTS BRAVE & BOLD");
+      displayLogo();
    }
 	//Method: getTotal(double tuition, double gnsf, double erf)
 	//Description: Gets the total tuition price by adding everything together
 	//Precondition: recieves a double tuition, double gnsf, double erf
 	//Postcondition: returns a  public static double
    public static double getTotal(double tuition, double gnsf, double erf){
-      double total = 0, mod = 0;
+      double total = 0;
       total = tuition + gnsf + erf;
-      mod = total % .001;
-      total -= mod;
       return total;
    }
 	//Method: getErf(int credits)
@@ -289,14 +288,21 @@ public class Tuition{
 	//Postcondition: returns a  public static int
    public static int getCredits(){
       int credit = 0;
-      do{
-         System.out.println("Please enter the amout of credits you are taking in numerical form:\n");
-         credit = (int)sc.nextDouble();
-         if(credit < 1 || credit > 30){
-            System.out.println("Error: Please enter a valid number");
-            sc.nextLine();
+      String input;
+      while(credit < 1 || credit > 25){
+         System.out.println("Please input the number of credits you are taking(1 to 25) in numerical form:");
+         try{
+            credit = sc.nextInt();
+            if(credit < 1 || credit > 25){
+            credit = 0;
+            System.out.println("Please input a number 1 to 25!");
+            }
          }
-      }while(credit <= 0 || credit >= 30);
+         catch(InputMismatchException e){
+            System.out.println("Error: Please input a number 1 to 25 with no decimals and in numerical form!");
+            sc.next();
+         }
+      }
       return credit;
    }
 	//Method: getDegree()
@@ -338,8 +344,7 @@ public class Tuition{
          else{
             System.out.println("You did not enter a valid degree. Please try again.");
             sc.nextLine();
-         }
-         
+         }        
       }while(selection == 0);
       return selection;   
    }
