@@ -1,6 +1,6 @@
 // ITP-120 001M FA19
 // Assignment 2
-// Version 0.1
+// Version 0.2
 //   ~~~~~~~~~~~~~~~Names~~~~~~~~~~~~~
 //   | William Sutton - Hassen Shakeel|
 //   |Stuart McAlpine - Trevor Saflin |
@@ -19,13 +19,23 @@ public class Scores{
       int holder = 0, holder2 = 0, score1 = 0, score2 = 0, shotNum = 0;
       
       //end Vars
-      name1 = getString("Please input the name of the first player:");
-      name2 = getString("Please input the name of the second player:");
+      do{
+         name1 = getString("Please input the name of the first player(within 8 characters):");
+         if(name1.length() > 8){
+            System.out.println("You name has too many characters. Please put less than 8");
+         }
+      }while(name1.length() > 8);
+      do{
+         name2 = getString("Please input the name of the second player(within 8 characters):");
+         if(name2.length() > 8){
+            System.out.println("You name has too many characters. Please put less than 8");
+         }
+      }while(name2.length() > 8);
       for(int s = 0; s < (quarters.length); s++){
          
          for(int x = 0; x < (seconds.length); x++){
             if(x == 0){
-               System.out.println("*************************************Quarter " + (s + 1) + "*************************************\nShot#     Player 1 Shot Type    " + name1 +
+               System.out.println("*******************************************Quarter " + (s + 1) + "*******************************************\nShot#     Player 1 Shot Type    " + name1 +
                "                    " + name2);
             }
             if(x % 2 == 0){
@@ -44,6 +54,11 @@ public class Scores{
       }
       compare(name1, name2, score1, score2, " won it!");
       
+   }
+   public static void returnSpaces(int num){
+      for(int a = 0; a <= num; a++){
+         System.out.print(" ");
+      }
    }
    public static void displayNums1(String name1, int score1, int holder, int shotNum){
       //System.out.print((shotNum) + " " + displayShot(holder) + " Score: " + score1);
