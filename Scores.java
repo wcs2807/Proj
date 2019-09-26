@@ -16,7 +16,7 @@ public class Scores{
       String name1, name2;
       int[] quarters = new int[4];
       int[] seconds = new int[48];
-      int holder = 0, holder2 = 0, score1 = 0, score2 = 0, shotNum = 0;
+      int holder = 0, holder2 = 0, score1 = 0, score2 = 0, shotNum = 0, spaces = 0;
       
       //end Vars
       do{
@@ -35,8 +35,14 @@ public class Scores{
          
          for(int x = 0; x < (seconds.length); x++){
             if(x == 0){
-               System.out.println("*******************************************Quarter " + (s + 1) + "*******************************************\nShot#     Player 1 Shot Type    " + name1 +
-               "                    " + name2);
+               System.out.println("*******************************************Quarter " + (s + 1) + "*******************************************");
+               System.out.print("Shot#");
+               returnSpaces(4);
+               System.out.print(name1 + " shot");
+               spaces = getAfterSpaces(name1, 15);
+               returnSpaces(spaces);
+               System.out.print(name1 + " score");
+               System.out.println();
             }
             if(x % 2 == 0){
                holder = generateShot();
@@ -54,6 +60,39 @@ public class Scores{
       }
       compare(name1, name2, score1, score2, " won it!");
       
+   }
+   public static int getAfterSpaces(String name, int nums){
+     int spaces = 0;
+     spaces = (name.length() + 14);
+     return spaces;
+     
+     /* int spaces = 0;
+      if(name.length() == 7){
+         spaces = 0;
+      }
+      else if(name.length() == 6){
+         spaces = 1;
+      }
+      else if(name.length() == 5){
+         spaces = 2;
+      }
+      else if(name.length() == 4){
+         spaces = 3;
+      }
+      else if(name.length() == 3){
+         spaces = 4;
+      }
+      else if(name.length() == 2){
+         spaces = 5;
+      }
+      else if(name.length() == 1){
+         spaces = 6;
+      }
+      else{
+         spaces = 0;
+      }
+      spaces = spaces + nums;
+      return spaces; */
    }
    public static void returnSpaces(int num){
       for(int a = 0; a <= num; a++){
