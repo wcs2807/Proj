@@ -1,13 +1,19 @@
 // ITP-120 001M FA19
 // Assignment 2
-// Version 0.2
+// Version 1.0
 //   ~~~~~~~~~~~~~~~Names~~~~~~~~~~~~~
-//   | William Sutton - Hassen Shakeel|
-//   |Stuart McAlpine - Trevor Saflin |
+//   |*William Sutton* - Trevor Saflin|
+//   |Stuart McAlpine - Hassen Shakeel|
 //   |Daanish Ahmed - Brian Pourkesali|
 //   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //
 // Description: This program calculates the scores of a basketball game
+// Version Changes:
+// 1.0 Fixed formatting error with shotNum being < 10 and score > 9 that would result in an extra space being added between the score and the "|"
+//	Added "smart formatting" to line below the quarter marker
+//
+//
+//
 import java.util.*;
 public class Scores{
    static Scanner sc = new Scanner(System.in);
@@ -16,7 +22,8 @@ public class Scores{
       String name1, name2;
       int[] quarters = new int[4];
       int[] seconds = new int[48];
-      int holder = 0, holder2 = 0, score1 = 0, score2 = 0, shotNum = 0, spaces = 0;
+      int holder = 0, holder2 = 0, score1 = 0, score2 = 0, shotNum = 0;
+      String placeHolder = "";
       
       //end Vars
       do{
@@ -38,10 +45,16 @@ public class Scores{
                System.out.println("*******************************************Quarter " + (s + 1) + "*******************************************");
                System.out.print("Shot#");
                returnSpaces(4);
-               System.out.print(name1 + " shot");
-               spaces = getAfterSpaces(name1, 15);
-               returnSpaces(spaces);
-               System.out.print(name1 + " score");
+               placeHolder = name1 + " shot";
+               System.out.print(placeHolder);
+               returnSpaces(21 - placeHolder.length());
+               placeHolder = name1 + " score";
+               System.out.print(placeHolder);
+               returnSpaces(20 - placeHolder.length());
+               placeHolder = "* " + name2 + " shot";
+               System.out.print(placeHolder);
+               returnSpaces(23 - placeHolder.length());
+               System.out.print(name2 + " score");
                System.out.println();
             }
             if(x % 2 == 0){
@@ -61,51 +74,22 @@ public class Scores{
       compare(name1, name2, score1, score2, " won it!");
       
    }
-   public static int getAfterSpaces(String name, int nums){
-     int spaces = 0;
-     spaces = (name.length() + 14);
-     return spaces;
-     
-     /* int spaces = 0;
-      if(name.length() == 7){
-         spaces = 0;
-      }
-      else if(name.length() == 6){
-         spaces = 1;
-      }
-      else if(name.length() == 5){
-         spaces = 2;
-      }
-      else if(name.length() == 4){
-         spaces = 3;
-      }
-      else if(name.length() == 3){
-         spaces = 4;
-      }
-      else if(name.length() == 2){
-         spaces = 5;
-      }
-      else if(name.length() == 1){
-         spaces = 6;
-      }
-      else{
-         spaces = 0;
-      }
-      spaces = spaces + nums;
-      return spaces; */
-   }
    public static void returnSpaces(int num){
       for(int a = 0; a <= num; a++){
          System.out.print(" ");
       }
    }
    public static void displayNums1(String name1, int score1, int holder, int shotNum){
-      //System.out.print((shotNum) + " " + displayShot(holder) + " Score: " + score1);
       System.out.print(shotNum);
       if(shotNum < 10){
          System.out.print("         ");
          System.out.print(displayShot(holder));
-         System.out.print(score1 + "                    ");//20
+         if(score1 < 10) {
+        	 System.out.print(score1 + "                    ");//20
+         }
+         else {
+        	 System.out.print(score1 + "                   ");
+         }
       }
       else{
          System.out.print("        ");
@@ -114,7 +98,9 @@ public class Scores{
             if(score1 < 10){
                System.out.print(score1 + "                    ");
             }
-            System.out.print(score1 + "                   ");
+            else {
+            	System.out.print(score1 + "                   ");
+            }
          }
          else{
          System.out.print(score1 + "                  ");
@@ -123,7 +109,7 @@ public class Scores{
       }
    }
    public static void displayNums2(String name1, int score1, int holder, int shotNum){
-      System.out.println("|" + " " + displayShot(holder) + " Score: " + score1);
+      System.out.println("|" + " " + displayShot(holder) + score1);
    }
    public static void compare(String name1, String name2, int score1, int score2, String prompt){
       if(score1 > score2){
@@ -136,7 +122,7 @@ public class Scores{
          System.out.println("\nNeither" + prompt + " It was a tie game!");
       }
    }
-   public static String displayShot(int num){//15
+   public static String displayShot(int num){//15 spaces
       if(num == 0){
          return "Airball               ";
       }
@@ -158,6 +144,7 @@ public class Scores{
       while(input.equals("")){
          System.out.println(prompt);
          input = sc.nextLine();
+         input = input.trim();
          if(input.equals("")){
             System.out.println("Please enter in a string");
          }
