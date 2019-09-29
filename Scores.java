@@ -1,6 +1,6 @@
 // ITP-120 001M FA19
 // Assignment 2
-// Version 1.0
+// Version 1.1
 //   ~~~~~~~~~~~~~~~Names~~~~~~~~~~~~~
 //   |*William Sutton* - Trevor Saflin|
 //   |Stuart McAlpine - Hassen Shakeel|
@@ -11,7 +11,7 @@
 // Version Changes:
 // 1.0 Fixed formatting error with shotNum being < 10 and score > 9 that would result in an extra space being added between the score and the "|"
 //	Added "smart formatting" to line below the quarter marker
-//
+// 1.1 Minor formatting issues and fixes to make program more like the assignment example
 //
 //
 import java.util.*;
@@ -27,34 +27,34 @@ public class Scores{
       
       //end Vars
       do{
-         name1 = getString("Please input the name of the first player(within 8 characters):");
-         if(name1.length() > 8){
-            System.out.println("You name has too many characters. Please put less than 8");
+         name1 = getString("Please input the name of the first player(within 12 characters):");
+         if(name1.length() > 12){
+            System.out.println("You name has too many characters. Please put less than 13 characters");
          }
-      }while(name1.length() > 8);
+      }while(name1.length() > 12);
       do{
-         name2 = getString("Please input the name of the second player(within 8 characters):");
-         if(name2.length() > 8){
-            System.out.println("You name has too many characters. Please put less than 8");
+         name2 = getString("Please input the name of the second player(within 12 characters):");
+         if(name2.length() > 12){
+            System.out.println("You name has too many characters. Please put less than 13 characters");
          }
-      }while(name2.length() > 8);
+      }while(name2.length() > 12);
       for(int s = 0; s < (quarters.length); s++){
          
          for(int x = 0; x < (seconds.length); x++){
             if(x == 0){
-               System.out.println("*******************************************Quarter " + (s + 1) + "*******************************************");
+               System.out.println("*******************************************QUARTER " + (s + 1) + "*******************************************");
                System.out.print("Shot#");
                returnSpaces(4);
-               placeHolder = name1 + " shot";
+               placeHolder = name1 + " Shot";
                System.out.print(placeHolder);
                returnSpaces(21 - placeHolder.length());
-               placeHolder = name1 + " score";
+               placeHolder = name1 + " Score";
                System.out.print(placeHolder);
                returnSpaces(20 - placeHolder.length());
-               placeHolder = "* " + name2 + " shot";
+               placeHolder = "* " + name2 + " Shot";
                System.out.print(placeHolder);
                returnSpaces(23 - placeHolder.length());
-               System.out.print(name2 + " score");
+               System.out.print(name2 + " Score");
                System.out.println();
             }
             if(x % 2 == 0){
@@ -119,7 +119,7 @@ public class Scores{
          System.out.println(name2 + prompt);
       }
       else{
-         System.out.println("\nNeither" + prompt + " It was a tie game!");
+         System.out.println("Tie game..Go Home..See ya' later!");
       }
    }
    public static String displayShot(int num){//15 spaces
