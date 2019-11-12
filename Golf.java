@@ -80,7 +80,7 @@ public class Golf { // Program name
 		System.out.println("PlayerID        Day1        Day2        Combined");
 		for(int i = 0; i < size; i ++) 
 		{
-			System.out.println(names.get(i) + "	        " + first[i] + "          " + second[i] + "           " + combined[i]);
+			System.out.printf("%-16s%-12d%-12d%-8d\n", names.get(i), first[i], second[i], combined[i]);
 		}
 		System.out.println("__________________________________________________");
 		System.out.println("Leader: \n" + names.get(leader));
