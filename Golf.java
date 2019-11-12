@@ -1,6 +1,6 @@
 // ITP-120 001M FA19
 // Assignment 3
-// Version 2.0
+// Version 1.2
 //   ~~~~~~~~~~~~~~~Names~~~~~~~~~~~~~
 //   |*William Sutton* - Trevor Saflin|
 //   |Stuart McAlpine - Hassen Shakeel|
@@ -10,7 +10,8 @@
 // Description: This program calculates the scores of a golf game
 // Version Changes:
 // 1.0 Did the thing
-// 2.0 Formatting, comments
+// 1.1 Formatting, comments
+// 1.2 Fixed it so when you enter 0 it gives goodbye message
 
 import javax.swing.*; 
 import java.util.*; // Scanner
@@ -22,10 +23,10 @@ public class Golf { // Program name
 		List<String> names2 = new ArrayList();
 		String holder = "";
 		int[] first, second, combined; // Parallel arrays
-		int leader = 0, size = 0;
-		while(size > 40 || size < 1) { // While loop, input validation.
+		int leader = 0, size = -1;
+		while(size > 40 || size < 0) { // While loop, input validation.
 			size = getInt("Please enter the number of players: ");
-         sc.nextLine();
+        		sc.nextLine();
 			if(size != 0) 
 			{
 				first = new int[size];
@@ -35,8 +36,12 @@ public class Golf { // Program name
 					System.out.println("-------------- Player " + (i + 1) + " ------------------");
 					holder = getString("Enter player name: ");
 					names.add(i, holder);
-					first[i] = getInt("Enter first day score: ");
-					second[i] = getInt("Enter second day score: ");
+					while(first[i] < 1 || second[i] < 1){
+						first[i] = getInt("Enter first day score: ");
+						second[i] = getInt("Enter second day score: ");
+						if(first[i] < 1 || second[i] < 1)
+							System.out.println(Please enter a valid number");
+					}
 					sc.nextLine();
 				}
 				combined = new int[size]; // Get combined score
@@ -96,11 +101,11 @@ public class Golf { // Program name
 	public static int getInt(String prompt) 
 	{
 		int a = 0;
-		while(a > 95 || a < 1) 
+		while(a > 95 || a < 0) 
 		{
 			System.out.println(prompt);
 			a = sc.nextInt();
-			if(a > 95 || a < 1) 
+			if(a > 95 || a < 0) 
 			{
 				System.out.println("Enter valid num");
 			}
