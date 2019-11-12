@@ -26,7 +26,7 @@ public class Golf { // Program name
 		int leader = 0, size = -1;
 		while(size > 40 || size < 0) { // While loop, input validation.
 			size = getInt("Please enter the number of players: ");
-        		sc.nextLine();
+        	sc.nextLine();
 			if(size != 0) 
 			{
 				first = new int[size];
@@ -40,7 +40,7 @@ public class Golf { // Program name
 						first[i] = getInt("Enter first day score: ");
 						second[i] = getInt("Enter second day score: ");
 						if(first[i] < 1 || second[i] < 1)
-							System.out.println(Please enter a valid number");
+							System.out.println("Please enter a valid number");
 					}
 					sc.nextLine();
 				}
@@ -100,7 +100,7 @@ public class Golf { // Program name
 	}
 	public static int getInt(String prompt) 
 	{
-		int a = 0;
+		int a = -1;
 		while(a > 95 || a < 0) 
 		{
 			System.out.println(prompt);
