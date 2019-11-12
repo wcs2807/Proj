@@ -1,6 +1,6 @@
 // ITP-120 001M FA19
 // Assignment 3
-// Version 1.3
+// Version 1.4
 //   ~~~~~~~~~~~~~~~Names~~~~~~~~~~~~~
 //   |*William Sutton* - Trevor Saflin|
 //   |Stuart McAlpine - Hassen Shakeel|
@@ -12,7 +12,7 @@
 // 1.0 Did the thing
 // 1.1 Formatting, comments
 // 1.2 Fixed it so when you enter 0 it gives goodbye message
-// 1.3 Fixed 0 error
+// 1.4 Added limit to getInt
 
 import javax.swing.*; 
 import java.util.*; // Scanner
@@ -26,7 +26,7 @@ public class Golf { // Program name
 		int[] first, second, combined; // Parallel arrays
 		int leader = 0, size = -1;
 		while(size > 40 || size < 0) { // While loop, input validation.
-			size = getInt("Please enter the number of players: ");
+			size = getInt("Please enter the number of players: ", 40);
         	sc.nextLine();
 			if(size != 0) 
 			{
@@ -38,8 +38,8 @@ public class Golf { // Program name
 					holder = getString("Enter player name: ");
 					names.add(i, holder);
 					while(first[i] < 1 || second[i] < 1){
-						first[i] = getInt("Enter first day score: ");
-						second[i] = getInt("Enter second day score: ");
+						first[i] = getInt("Enter first day score: ", 95);
+						second[i] = getInt("Enter second day score: ", 95);
 						if(first[i] < 1 || second[i] < 1)
 							System.out.println("Please enter a valid number");
 					}
@@ -99,14 +99,14 @@ public class Golf { // Program name
 		q = sc.nextLine();
 		return q;
 	}
-	public static int getInt(String prompt) 
+	public static int getInt(String prompt, int limit) 
 	{
 		int a = -1;
-		while(a > 95 || a < 0) 
+		while(a > limit || a < 0) 
 		{
 			System.out.println(prompt);
 			a = sc.nextInt();
-			if(a > 95 || a < 0) 
+			if(a > limit || a < 0) 
 			{
 				System.out.println("Enter valid num");
 			}
