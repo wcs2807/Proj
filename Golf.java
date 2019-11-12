@@ -1,6 +1,6 @@
 // ITP-120 001M FA19
 // Assignment 3
-// Version 1.4
+// Version 1.5
 //   ~~~~~~~~~~~~~~~Names~~~~~~~~~~~~~
 //   |*William Sutton* - Trevor Saflin|
 //   |Stuart McAlpine - Hassen Shakeel|
@@ -13,6 +13,7 @@
 // 1.1 Formatting, comments
 // 1.2 Fixed it so when you enter 0 it gives goodbye message
 // 1.4 Added limit to getInt
+// 1.5 Fixed table formatting for tournament statistics
 
 import javax.swing.*; 
 import java.util.*; // Scanner
