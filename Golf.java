@@ -1,6 +1,6 @@
 // ITP-120 001M FA19
 // Assignment 3
-// Version 1.2
+// Version 1.3
 //   ~~~~~~~~~~~~~~~Names~~~~~~~~~~~~~
 //   |*William Sutton* - Trevor Saflin|
 //   |Stuart McAlpine - Hassen Shakeel|
@@ -12,6 +12,7 @@
 // 1.0 Did the thing
 // 1.1 Formatting, comments
 // 1.2 Fixed it so when you enter 0 it gives goodbye message
+// 1.3 Fixed 0 error
 
 import javax.swing.*; 
 import java.util.*; // Scanner
