@@ -1,6 +1,6 @@
 // ITP-120 001M FA19
 // Assignment 3
-// Version 1.5
+// Version 1.6
 //   ~~~~~~~~~~~~~~~Names~~~~~~~~~~~~~
 //   |*William Sutton* - Trevor Saflin|
 //   |Stuart McAlpine - Hassen Shakeel|
@@ -14,6 +14,7 @@
 // 1.2 Fixed it so when you enter 0 it gives goodbye message
 // 1.4 Added limit to getInt
 // 1.5 Fixed table formatting for tournament statistics
+// 1.6 Limited player name to less than 16 chars
 
 import javax.swing.*; 
 import java.util.*; // Scanner
@@ -38,7 +39,20 @@ public class Golf { // Program name
 					System.out.println("-------------- Player " + (i + 1) + " ------------------");
 					holder = getString("Enter player name: ");
 					names.add(i, holder);
-					while(first[i] < 1 || second[i] < 1){
+					if(holder.length() > 15)
+					{
+						System.out.println("Error: Please enter less than 16 characters.");
+					}
+			      while(holder.length() > 15);
+			      	{
+			    	  holder = getString("Enter player name: ");
+			      	}
+			    	  if(holder.length() > 15)
+			    	  {
+			        	 System.out.println("Error: Please enter less than 15 characters.");
+			    	  }
+					while(first[i] < 1 || second[i] < 1)
+					{
 						first[i] = getInt("Enter first day score: ", 95);
 						second[i] = getInt("Enter second day score: ", 95);
 						if(first[i] < 1 || second[i] < 1)
