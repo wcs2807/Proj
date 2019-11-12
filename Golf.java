@@ -14,7 +14,7 @@
 // 1.2 Fixed it so when you enter 0 it gives goodbye message
 // 1.4 Added limit to getInt
 // 1.5 Fixed table formatting for tournament statistics
-// 1.6 Limited player name to less than 16 chars
+// 1.6 Added character name limits
 
 import javax.swing.*; 
 import java.util.*; // Scanner
@@ -37,22 +37,13 @@ public class Golf { // Program name
 				for(int i = 0; i < size; i++) // Get name and scores
 				{
 					System.out.println("-------------- Player " + (i + 1) + " ------------------");
-					holder = getString("Enter player name: ");
+					while(holder.length() > 16 || holder.length() < 1){
+                  holder = getString("Enter player name(between 1 and 16 chars): ");
+                  if(holder.length() > 16 || holder.length() < 1)
+                     System.out.println("Please enter in a name between 1 and 16 chars");
+               }
 					names.add(i, holder);
-					if(holder.length() > 15)
-					{
-						System.out.println("Error: Please enter less than 16 characters.");
-					}
-			      while(holder.length() > 15);
-			      	{
-			    	  holder = getString("Enter player name: ");
-			      	}
-			    	  if(holder.length() > 15)
-			    	  {
-			        	 System.out.println("Error: Please enter less than 15 characters.");
-			    	  }
-					while(first[i] < 1 || second[i] < 1)
-					{
+					while(first[i] < 1 || second[i] < 1){
 						first[i] = getInt("Enter first day score: ", 95);
 						second[i] = getInt("Enter second day score: ", 95);
 						if(first[i] < 1 || second[i] < 1)
@@ -61,8 +52,7 @@ public class Golf { // Program name
 					sc.nextLine();
 				}
 				combined = new int[size]; // Get combined score
-				for(int u = 0; u < size; u++) 
-				{
+				for(int u = 0; u < size; u++){
 					combined[u] = first[u] + second[u];
 				}
 				leader = 0; // Get leader
