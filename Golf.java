@@ -1,6 +1,6 @@
 // ITP-120 001M FA19
 // Assignment 3
-// Version 1.6
+// Version 1.7
 //   ~~~~~~~~~~~~~~~Names~~~~~~~~~~~~~
 //   |*William Sutton* - Trevor Saflin|
 //   |Stuart McAlpine - Hassen Shakeel|
@@ -15,6 +15,7 @@
 // 1.4 Added limit to getInt
 // 1.5 Fixed table formatting for tournament statistics
 // 1.6 Added character name limits
+// 1.7 Fixed holder bug
 
 import javax.swing.*; 
 import java.util.*; // Scanner
@@ -43,6 +44,7 @@ public class Golf { // Program name
                      System.out.println("Please enter in a name between 1 and 16 chars");
                }
 					names.add(i, holder);
+               holder = "";
 					while(first[i] < 1 || second[i] < 1){
 						first[i] = getInt("Enter first day score: ", 95);
 						second[i] = getInt("Enter second day score: ", 95);
