@@ -1,6 +1,6 @@
 // ITP-120 001M FA19
 // Assignment 3
-// Version 1.7
+// Version 1.8
 //   ~~~~~~~~~~~~~~~Names~~~~~~~~~~~~~
 //   |*William Sutton* - Trevor Saflin|
 //   |Stuart McAlpine - Hassen Shakeel|
@@ -16,6 +16,7 @@
 // 1.5 Fixed table formatting for tournament statistics
 // 1.6 Added character name limits
 // 1.7 Fixed holder bug
+// 1.8 Fixed leader bug
 
 import javax.swing.*; 
 import java.util.*; // Scanner
@@ -60,14 +61,14 @@ public class Golf { // Program name
 				leader = 0; // Get leader
 				for(int w = 0; w < size; w++) 
 					{
-					if(combined[w] > combined[leader]) 
+					if(combined[w] < combined[leader]) 
 						{
 							leader = w;
 						}
 					}
 				for(int p = 0; p < size; p++) 
 					{
-					if(combined[p] >= (combined[leader] - 10) && leader != p) 
+					if((combined[leader] + 10) > combined[p] && leader != p) 
 						{
 							names2.add(names.get(p));
 						}
@@ -92,7 +93,7 @@ public class Golf { // Program name
 		System.out.println("__________________________________________________");
 		System.out.println("Leader: \n" + names.get(leader));
 		System.out.println("__________________________________________________");
-		System.out.println("Players within 10 points:");
+		System.out.println("Players within 10 points of the leader:");
 		for(int q = 0; q < names2.size(); q++) 
 			{
 			System.out.println(names2.get(q));
