@@ -31,19 +31,7 @@ public class Golf { // Program name
 		int leader = 0, size = -1;
 		while(size > 40 || size < 0) { // While loop, input validation.
 			size = getInt("Please enter the number of players: ", 40);
-        	sc.nextLine();
-			if(size != 0) 
-			{
-				first = new int[size];
-				second = new int[size];
-				for(int i = 0; i < size; i++) // Get name and scores
-				{
-					System.out.println("-------------- Player " + (i + 1) + " ------------------");
-					while(holder.length() > 16 || holder.length() < 1){
-                  holder = getString("Enter player name(between 1 and 16 chars): ");
-                  if(holder.length() > 16 || holder.length() < 1)
-                     System.out.println("Please enter in a name between 1 and 16 chars");
-               }
+        	sc.nextL
 					names.add(i, holder);
                holder = "";
 					while(first[i] < 1 || second[i] < 1){
