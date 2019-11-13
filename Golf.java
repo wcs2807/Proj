@@ -103,7 +103,7 @@ public class Golf { // Program name
 	public static String getString(String prompt) 
 	{
 		String q;
-		System.out.println(prompt);
+		System.out.println(prompt)
 		q = sc.nextLine();
 		return q;
 	}
