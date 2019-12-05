@@ -1,6 +1,6 @@
 // ITP-120 001M FA19
 // Assignment 4
-// Version 1
+// Version 2
 //   ~~~~~~~~~~~~~~~Names~~~~~~~~~~~~~
 //   | William Sutton - Trevor Saflin |
 //   |Stuart McAlpine - Hassen Shakeel|
@@ -8,20 +8,24 @@
 //   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Program name: Sales
 
-public class Sales extends MadeASale
+public class Sales extends MadeASale // Class
 {
-   private double price; // Sale price
+   private double price; // Data member for sale price
 
+
+   // Constructor that accepts 3 parameters for the quantity
+   // of items sold and store ID and the price.
    public Sales(int newID, int newNumSold, double newPrice)
    {
-      // Superclass constructor
+      // Superclass constructor passes 2 parameters
+      // for the store ID and the quantity of items sold
       super(newID, newNumSold);
 
       // Set the price
       price = newPrice;
    }
    
-   // getPrice method returns price
+   // Accessor/getter method to get the price of the items sold 
    public double getPrice()
    {
       return price;
