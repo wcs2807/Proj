@@ -1,6 +1,6 @@
 // ITP-120 001M FA19
 // Assignment 4
-// Version 0
+// Version 1
 //   ~~~~~~~~~~~~~~~Names~~~~~~~~~~~~~
 //   | William Sutton - Trevor Saflin |
 //   |Stuart McAlpine - Hassen Shakeel|
