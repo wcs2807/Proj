@@ -1,6 +1,6 @@
 // ITP-120 001M FA19
 // Assignment 4
-// Version 2
+// Version 2.1
 //   ~~~~~~~~~~~~~~~Names~~~~~~~~~~~~~
 //   | William Sutton - Trevor Saflin |
 //   |Stuart McAlpine - Hassen Shakeel|
@@ -14,36 +14,45 @@ public class SalesDemo // Class name
    public static void main(String[] args) // Main method
    {
       int totalSold = 0;
-      int numberSold;
-      int storeID;
-      double price;
+      int numberSold = 0;
+      int storeID = 0;
+      double price = 0;
       double totalSales = 0;
-      String runProgram;
+      String runProgram = " ", holder = " ";
 
       Scanner sc = new Scanner(System.in); 
 
       System.out.println("Time to track daily item sales.");
-      System.out.println("Please enter yes to run the program or no to quit.");
-
-      runProgram = sc.nextLine();
-      runProgram = runProgram.toLowerCase();
-
+      while(runProgram == " "){
+        System.out.println("Please enter yes to run the program or no to quit.");
+        holder = sc.nextLine();
+        if(holder.equals("yes"))
+            runProgram = "yes";
+        else if(holder.equals("no"))
+            runProgram = "no";         
+        runProgram = runProgram.toLowerCase();
+      }
       // Loop the runs the program by allowing the user to choose
       // to run the program or not 
       while (runProgram.equals("yes"))
       {
          // Prompt to enter the store number and input accordingly
-         System.out.println("Please enter the store that you want to enter sales for (1, 2, or 3):");
-         storeID = sc.nextInt();
+         while(storeID < 1 && storeID > 3){
+            System.out.println("Please enter the store that you want to enter sales for (1, 2, or 3):");
+            storeID = sc.nextInt();
+         }
          // Prompt to enter the quantity of items sold for the store and input accordingly 
-         System.out.println("Please enter the number of items sold for store " + storeID + ":");
-         numberSold = sc.nextInt();
-         sc.nextLine();
+         while(numberSold < 1){
+            System.out.println("Please enter the number of items sold for store " + storeID + ":");
+            numberSold = sc.nextInt();
+            sc.nextLine();
+         }
          // Prompt to enter the price of the item sold for the store and input accordingly 
-         System.out.println("Please enter the price for the item for " + storeID + ":");
-         price = sc.nextDouble();
-         sc.nextLine();
-
+         while(price < 1){  
+             System.out.println("Please enter the price for the item for " + storeID + ":");
+             price = sc.nextDouble();
+             sc.nextLine();
+         }
          // An object that represents a sale and passes the
          // store ID and quantity of items sold and price as
          // arguments to the constructor in the Sales class
@@ -73,11 +82,19 @@ public class SalesDemo // Class name
          totalSales = sale.getTotalSales(price);
 
          // Prompt the user to run the program again and accept input accordingly 
+         runProgram = " ";
          System.out.println("Are you ready to enter sales for another store?");
          System.out.println("Please enter yes to run the program or no to quit.");
-
-         runProgram = sc.nextLine();
-         runProgram = runProgram.toLowerCase();
+          while(runProgram == " "){
+             System.out.println("Please enter yes to run the program or no to quit.");
+             holder = sc.nextLine();
+             if(holder.equals("yes"))
+                  runProgram = "yes";
+              else if(holder.equals("no"))
+                  runProgram = "no";         
+           runProgram = runProgram.toLowerCase();
+          }
+          runProgram = " ";
       } // end of while
    
    // When the program has ended, display the total quantity

@@ -63,4 +63,3 @@ public class MadeASale // Class name
    }
 
 } //End of MadeASale
- 
