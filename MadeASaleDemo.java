@@ -65,8 +65,8 @@ public class MadeASaleDemo // Class name
      
          // Prompt the user to run the program again and accept input accordingly
          System.out.println("Are you ready to enter sales for another store?");
-        
-          System.out.println("Please enter yes to run the program or no to quit.");
+          runProgram = " ";
+          holder = " ";
           while(runProgram == " "){
              System.out.println("Please enter yes to run the program or no to quit.");
              holder = sc.nextLine();
@@ -76,7 +76,10 @@ public class MadeASaleDemo // Class name
                   runProgram = "no";         
            runProgram = runProgram.toLowerCase();
           }
+          runProgram = " ";
           holder = " ";
+          numberSold = 0;
+          
       } //end while
 
       // When the program has ended, display the total quantity of items sold for all stores
