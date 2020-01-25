@@ -1,12 +1,4 @@
-// ITP-120 001M FA19
-// Assignment 1
-// Version 1.15.3
-//   ~~~~~~~~~~~~~~~Names~~~~~~~~~~~~~
-//   | William Sutton - Hassen Shakeel|
-//   |Stuart McAlpine - Trevor Saflin |
-//   |Daanish Ahmed - Brian Pourkesali|
-//   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-//
+// ITP-120
 // Description: This program calculates the tuition costs of a GMU student
 import java.util.*;
 public class Tuition{
@@ -40,27 +32,7 @@ public class Tuition{
 	//Precondition: N/A
 	//Postcondition: N/A
    public static void displayLogo(){
-      System.out.println("          _____                    _____                    _____          ");
-      System.out.println("         /\\    \\                  /\\    \\                  /\\    \\         ");
-      System.out.println("        /::\\    \\                /::\\____\\                /::\\____\\        ");
-      System.out.println("       /::::\\    \\              /::::|   |               /:::/    /        ");
-      System.out.println("      /::::::\\    \\            /:::::|   |              /:::/    /         ");
-      System.out.println("     /:::/\\:::\\    \\          /::::::|   |             /:::/    /          ");
-      System.out.println("    /:::/  \\:::\\    \\        /:::/|::|   |            /:::/    /           ");
-      System.out.println("   /:::/    \\:::\\    \\      /:::/ |::|   |           /:::/    /            ");
-      System.out.println("  /:::/    / \\:::\\    \\    /:::/  |::|___|______    /:::/    /      _____  ");
-      System.out.println(" /:::/    /   \\:::\\ ___\\  /:::/   |::::::::\\    \\  /:::/____/      /\\    \\ ");
-      System.out.println("/:::/____/  ___\\:::|    |/:::/    |:::::::::\\____\\|:::|    /      /::\\____\\");
-      System.out.println("\\:::\\    \\ /\\  /:::|____|\\::/    / ~~~~~/:::/    /|:::|____\\     /:::/    /");
-      System.out.println(" \\:::\\    /::\\ \\::/    /  \\/____/      /:::/    /  \\:::\\    \\   /:::/    / ");
-      System.out.println("  \\:::\\   \\:::\\ \\/____/               /:::/    /    \\:::\\    \\ /:::/    /  ");
-      System.out.println("   \\:::\\   \\:::\\____\\                /:::/    /      \\:::\\    /:::/    /   ");
-      System.out.println("    \\:::\\  /:::/    /               /:::/    /        \\:::\\__/:::/    /    ");
-      System.out.println("     \\:::\\/:::/    /               /:::/    /          \\::::::::/    /     ");
-      System.out.println("      \\::::::/    /               /:::/    /            \\::::::/    /      ");
-      System.out.println("       \\::::/    /               /:::/    /              \\::::/    /       ");
-      System.out.println("        \\::/____/                \\::/    /                \\::/____/        ");
-      System.out.println("                                  \\/____/                  ~~              ");
+      System.out.println();
    }
 	//Method: getRepeat()
 	//Description: Asks the user if they want to repeat the program
