@@ -1,11 +1,6 @@
 // ITP-120 001M FA19
 // Assignment 4
 // Version 2
-//   ~~~~~~~~~~~~~~~Names~~~~~~~~~~~~~
-//   | William Sutton - Trevor Saflin |
-//   |Stuart McAlpine - Hassen Shakeel|
-//   |Daanish Ahmed - Brian Pourkesali|
-//   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Program name: MadeASale
 
 public class MadeASale // Class name
