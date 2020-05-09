@@ -1,11 +1,6 @@
 // ITP-120 001M FA19
 // Assignment 3
 // Version 1.8
-//   ~~~~~~~~~~~~~~~Names~~~~~~~~~~~~~
-//   |*William Sutton* - Trevor Saflin|
-//   |Stuart McAlpine - Hassen Shakeel|
-//   |Daanish Ahmed - Brian Pourkesali|
-//   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //
 // Description: This program calculates the scores of a golf game
 // Version Changes:
